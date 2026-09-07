@@ -19,7 +19,6 @@ document.querySelectorAll('[data-modal]').forEach(el=>el.addEventListener('click
   if(el.dataset.modal==='orders'){ if(e.target.closest('a')) return; window.location.href='tracking-bulk-orders.html'; return;}
   if(el.dataset.modal==='coresq'){ if(e.target.closest('a')) return; window.location.href='coresq-brand-identity.html'; return;}
   if(el.dataset.modal==='social'){ if(e.target.closest('a')) return; window.location.href='social-media-case-study.html'; return;}
-  if(el.dataset.modal==='galaxy'){ if(e.target.closest('a')) return; window.location.href='galaxy-venture-hrc.html'; return;}
   if(e.target.closest('a,button') && !e.target.closest('.text-link')) return;
   openModal(el.dataset.modal);
 }));

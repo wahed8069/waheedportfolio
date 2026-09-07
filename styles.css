@@ -8,5 +8,31 @@
 .kera-case-study img{display:block;width:100%;max-width:650px;margin:0 auto;background:#050505;border:1px solid #222;border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,.35)}
 @media (max-width:640px){.kera-case-study img{border-radius:10px}.kera-case-study h4{font-size:18px}}
 
-
-
+/* Resume / CV Section */
+.resume-card{border:1px solid var(--line);background:linear-gradient(155deg,#131416 0%,#0c0d0e 100%);border-radius:var(--radius);padding:44px;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative;overflow:hidden}
+.resume-card::before{content:"";position:absolute;top:-120px;left:-80px;width:320px;height:320px;background:radial-gradient(circle,rgba(216,255,95,0.06) 0%,transparent 70%);pointer-events:none}
+.resume-badge{display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:.2em;color:var(--accent);background:rgba(216,255,95,0.08);border:1px solid rgba(216,255,95,0.22);padding:6px 14px;border-radius:999px;text-transform:uppercase;margin-bottom:20px;font-weight:600}
+.resume-badge i{width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block}
+.resume-info h3{font-size:clamp(34px,4.5vw,56px);line-height:.95;letter-spacing:-.05em;margin:0 0 12px;font-weight:800}
+.resume-info .resume-role{font-size:13px;letter-spacing:.14em;color:#8e8e8b;text-transform:uppercase;margin-bottom:18px;font-weight:600}
+.resume-info p{color:var(--muted);font-size:14px;line-height:1.65;margin:0 0 28px;max-width:540px}
+.resume-highlights{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:32px}
+.resume-item{border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);padding:14px 18px;border-radius:14px}
+.resume-item small{display:block;font-size:10px;letter-spacing:.14em;color:#7a7a77;text-transform:uppercase;margin-bottom:4px}
+.resume-item span{font-size:13px;font-weight:600;color:#e5e5e0}
+.resume-actions{display:flex;flex-wrap:wrap;gap:12px}
+.resume-actions .button.primary{background:var(--accent);color:#0b0b0b;font-weight:600;border-color:var(--accent);transition:transform .2s,box-shadow .2s}
+.resume-actions .button.primary:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(216,255,95,0.25)}
+.resume-actions .button.secondary{border-color:#333;color:#eee;transition:all .2s;cursor:pointer}
+.resume-actions .button.secondary:hover{border-color:#555;background:#181818;color:#fff}
+.resume-preview-wrap{display:flex;justify-content:center;align-items:center;position:relative}
+.resume-doc-card{position:relative;width:100%;max-width:380px;background:#181818;border:1px solid #2a2a2a;border-radius:20px;padding:12px;box-shadow:0 28px 70px rgba(0,0,0,.65),0 0 0 1px rgba(255,255,255,0.05);transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease;cursor:pointer;text-decoration:none;display:block}
+.resume-doc-card:hover{transform:translateY(-6px) scale(1.01);border-color:rgba(216,255,95,0.4);box-shadow:0 35px 90px rgba(0,0,0,.8),0 0 30px rgba(216,255,95,0.12)}
+.resume-doc-inner{position:relative;border-radius:12px;overflow:hidden;background:#ffffff;aspect-ratio:1/1.35}
+.resume-doc-inner img{display:block;width:100%;height:100%;object-fit:cover;object-position:top;filter:contrast(1.02)}
+.resume-doc-overlay{position:absolute;inset:0;background:rgba(5,5,5,0.45);backdrop-filter:blur(2px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;opacity:0;transition:opacity .25s ease;color:#fff;font-size:13px;font-weight:600;border-radius:12px}
+.resume-doc-card:hover .resume-doc-overlay{opacity:1}
+.resume-doc-overlay span{padding:10px 18px;background:rgba(10,10,10,0.9);border:1px solid rgba(255,255,255,0.2);border-radius:999px;display:inline-flex;align-items:center;gap:8px}
+.resume-doc-footer{display:flex;justify-content:space-between;align-items:center;padding:10px 6px 2px;font-size:11px;color:#888;letter-spacing:.08em;text-transform:uppercase}
+.resume-doc-footer b{color:var(--accent);font-weight:600}
+@media (max-width:900px){.resume-card{grid-template-columns:1fr;padding:32px 24px;gap:36px}.resume-highlights{grid-template-columns:1fr}.resume-doc-card{max-width:320px;margin:0 auto}}

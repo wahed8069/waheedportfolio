@@ -10,7 +10,8 @@ const data = {
   orders:{kicker:'02 / MOBILE PRODUCT',title:'Tracking bulk orders',text:'A streamlined order-tracking experience designed around visibility, status, and quick access to the information that matters.',img:'assets/bulk-orders.jpg',tags:['Interaction design','UI system','Mobile UX','Prototype']},
   uscholar:{kicker:'03 / MOBILE PRODUCT',title:'uScholar',text:'A study-abroad discovery experience designed to help students browse destinations and move through the journey with more confidence.',img:'assets/uscholar.jpg',tags:['Research','Mobile UI','Information architecture','Usability']},
   lounge:{kicker:'04 / MOBILE PRODUCT',title:'LOUNGE',text:'A reading and book discovery concept with a calm browsing flow, clear hierarchy, and focused content presentation.',img:'assets/lounge.jpg',tags:['Content UX','Visual design','Mobile UI','Prototype']},
-  coresq:{kicker:'05 / BRAND IDENTITY',title:'CORESQ',text:'A financial intelligence identity built around a geometric core, connected systems, and a confident navy / teal visual language.',img:'assets/coresq.jpg',tags:['Logo design','Brand system','Typography','Art direction']}
+  coresq:{kicker:'03 / BRAND IDENTITY',title:'CORESQ',text:'A financial intelligence identity built around a geometric core, connected systems, and a confident navy / teal visual language.',img:'assets/coresq.jpg',tags:['Logo design','Brand system','Typography','Art direction']},
+  galaxy:{kicker:'05 / WEB & PRODUCT DESIGN',title:'Galaxy Venture HRC',text:'A recruitment platform connecting professionals with opportunities across Europe — designed from discovery and job search through hiring and candidate management.',img:'assets/galaxy-venture.jpg',tags:['UI/UX Design','Web Design','ATS Workflow','Recruitment Portal']}
 };
 function openModal(key){const d=data[key]; if(!d)return; modalKicker.textContent=d.kicker; keraCaseStudy.hidden = key !== 'kera'; modalTitle.textContent=d.title; modalText.textContent=d.text; modalImg.src=d.img; modalImg.alt=d.title; modalTags.innerHTML=d.tags.map(t=>`<span>${t}</span>`).join(''); modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';}
 function closeModal(){modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.style.overflow='';}
@@ -19,6 +20,7 @@ document.querySelectorAll('[data-modal]').forEach(el=>el.addEventListener('click
   if(el.dataset.modal==='orders'){ if(e.target.closest('a')) return; window.location.href='tracking-bulk-orders.html'; return;}
   if(el.dataset.modal==='coresq'){ if(e.target.closest('a')) return; window.location.href='coresq-brand-identity.html'; return;}
   if(el.dataset.modal==='social'){ if(e.target.closest('a')) return; window.location.href='social-media-case-study.html'; return;}
+  if(el.dataset.modal==='galaxy'){ if(e.target.closest('a')) return; window.location.href='galaxy-venture-hrc.html'; return;}
   if(e.target.closest('a,button') && !e.target.closest('.text-link')) return;
   openModal(el.dataset.modal);
 }));

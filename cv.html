@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Waheed M — Curriculum Vitae (CV) & Resume. UI/UX & Graphic Designer with experience across mobile products, web experiences, brand systems, and marketing.">
+  <meta property="og:image" content="assets/cv-preview.jpg">
+  <title>Curriculum Vitae — Waheed M · UI/UX &amp; Graphic Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #070707;
+      --card: #111111;
+      --card-inner: #161616;
+      --border: #242424;
+      --border-subtle: #1c1c1c;
+      --text: #f3f3ef;
+      --text-muted: #959590;
+      --text-dim: #6e6e69;
+      --accent: #caff3d;
+      --accent-dim: rgba(202, 255, 61, 0.12);
+      --radius: 20px;
+      --max: 1300px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      height: 74px;
+      border-bottom: 1px solid var(--border);
+      padding: 0 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(9, 9, 9, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+    .logo span { color: var(--accent); }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .nav-back {
+      font-size: 13px;
+      color: #aaa;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: #fff; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #080808;
+      border-color: var(--accent);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(202, 255, 61, 0.28);
+    }
+    .btn-secondary {
+      background: #141414;
+      color: #eee;
+      border-color: #333;
+    }
+    .btn-secondary:hover {
+      background: #1f1f1f;
+      border-color: #555;
+      color: #fff;
+    }
+
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 60px 5vw 100px;
+    }
+
+    /* Hero Header */
+    .cv-hero {
+      margin-bottom: 50px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 44px;
+    }
+    .cv-kicker {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      color: var(--accent);
+      text-transform: uppercase;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .cv-kicker i {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+    }
+    .cv-hero-title-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .cv-hero h1 {
+      font-size: clamp(48px, 8vw, 96px);
+      line-height: 0.9;
+      letter-spacing: -0.06em;
+      margin: 0 0 10px;
+      font-weight: 900;
+    }
+    .cv-hero-role {
+      font-size: clamp(16px, 2vw, 22px);
+      color: var(--text-muted);
+      letter-spacing: -0.02em;
+      margin: 0;
+    }
+    .cv-hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .cv-meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 13px;
+      color: #aaa;
+    }
+    .cv-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .cv-meta-item small {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      color: var(--text-dim);
+      text-transform: uppercase;
+    }
+    .cv-meta-item a {
+      color: #ddd;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .cv-meta-item a:hover { color: #fff; }
+
+    /* Layout Grid */
+    .cv-grid {
+      display: grid;
+      grid-template-columns: 1.18fr 0.82fr;
+      gap: 48px;
+      align-items: flex-start;
+    }
+
+    /* Structured Section Cards */
+    .cv-section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 34px;
+      margin-bottom: 28px;
+    }
+    .cv-section-title {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      color: #888;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin: 0 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .cv-section-title span {
+      color: var(--accent);
+      font-size: 10px;
+    }
+    .cv-summary {
+      font-size: 15px;
+      line-height: 1.75;
+      color: #ccc;
+      margin: 0;
+    }
+
+    /* Experience Timeline */
+    .exp-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .exp-card {
+      border: 1px solid var(--border-subtle);
+      background: var(--card-inner);
+      border-radius: 16px;
+      padding: 22px 24px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .exp-card:hover {
+      border-color: #383838;
+      transform: translateY(-2px);
+    }
+    .exp-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .exp-role {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #fff;
+    }
+    .exp-company {
+      font-size: 13px;
+      color: var(--accent);
+      font-weight: 500;
+      margin-top: 2px;
+    }
+    .exp-period {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: #777;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .exp-bullets {
+      margin: 14px 0 0;
+      padding-left: 18px;
+      color: #aaa;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .exp-bullets li {
+      margin-bottom: 6px;
+    }
+
+    /* Skills & Tools */
+    .tag-cluster {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tag {
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--card-inner);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      color: #ddd;
+      font-weight: 500;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .tag:hover {
+      border-color: var(--accent);
+      color: #fff;
+    }
+    .tag.accent {
+      border-color: rgba(202, 255, 61, 0.35);
+      background: var(--accent-dim);
+      color: var(--accent);
+    }
+
+    /* Education Card */
+    .edu-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .edu-item:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+    .edu-item h4 {
+      margin: 0 0 4px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+    }
+    .edu-item p {
+      margin: 0;
+      font-size: 13px;
+      color: #888;
+    }
+    .edu-item span {
+      font-size: 11px;
+      color: #666;
+      white-space: nowrap;
+    }
+
+    /* Right Column - Document Viewer */
+    .doc-viewer-sticky {
+      position: sticky;
+      top: 98px;
+    }
+    .doc-frame {
+      background: #141414;
+      border: 1px solid #282828;
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: 0 35px 80px rgba(0, 0, 0, 0.7);
+    }
+    .doc-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 8px 14px;
+      border-bottom: 1px solid #222;
+      margin-bottom: 16px;
+    }
+    .doc-dots {
+      display: flex;
+      gap: 6px;
+    }
+    .doc-dots span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #444;
+    }
+    .doc-toolbar-title {
+      font-size: 11px;
+      color: #888;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .doc-paper {
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 1 / 1.35;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      position: relative;
+    }
+    .doc-paper img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+    .doc-overlay-action {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(2px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      cursor: pointer;
+    }
+    .doc-paper:hover .doc-overlay-action {
+      opacity: 1;
+    }
+    .doc-overlay-action span {
+      background: #000;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .doc-footer-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 16px;
+      padding: 0 6px;
+      font-size: 11px;
+      color: #777;
+    }
+    .doc-footer-meta a {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .doc-footer-meta a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 5vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #666;
+      font-size: 11px;
+    }
+    footer a {
+      color: #888;
+      transition: color 0.2s;
+    }
+    footer a:hover { color: #fff; }
+    .footer-links { display: flex; gap: 20px; }
+
+    @media (max-width: 960px) {
+      .cv-grid { grid-template-columns: 1fr; gap: 36px; }
+      .doc-viewer-sticky { position: static; max-width: 440px; margin: 0 auto; }
+      .cv-hero-title-row { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 600px) {
+      header { padding: 0 20px; }
+      main { padding: 40px 20px 70px; }
+      .cv-section { padding: 22px; }
+      .cv-meta-bar { flex-direction: column; gap: 12px; }
+      footer { flex-direction: column; gap: 14px; align-items: flex-start; padding: 24px 20px; }
+    }
+
+    /* Print Styles */
+    @media print {
+      header, .doc-viewer-sticky, .cv-hero-actions, footer { display: none !important; }
+      body { background: #fff !important; color: #000 !important; }
+      .cv-section { border: 1px solid #ddd !important; background: #fff !important; color: #000 !important; page-break-inside: avoid; }
+      .exp-card { background: #fff !important; border: 1px solid #ddd !important; color: #000 !important; }
+      .exp-role, .exp-company, h1, h2, h3, h4 { color: #000 !important; }
+      .tag { background: #eee !important; color: #000 !important; border: 1px solid #ccc !important; }
+      main { padding: 0 !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="logo" href="index.html">WAHEED<span>.</span></a>
+    <div class="nav-actions">
+      <a class="nav-back" href="index.html">← Back to Portfolio</a>
+      <a class="btn btn-primary" href="assets/Waheed_M_Resume.pdf" download="Waheed_M_Resume.pdf">Download PDF ↓</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="cv-hero">
+      <div class="cv-kicker"><i></i> Curriculum Vitae · 2026</div>
+      <div class="cv-hero-title-row">
+        <div>
+          <h1>Waheed M</h1>
+          <p class="cv-hero-role">UI/UX &amp; Graphic Designer</p>
+        </div>
+        <div class="cv-hero-actions">
+          <a class="btn btn-primary" href="assets/Waheed_M_Resume.pdf" download="Waheed_M_Resume.pdf">
+            Download PDF <span>↓</span>
+          </a>
+          <a class="btn btn-secondary" href="assets/Waheed_M_Resume.pdf" target="_blank" rel="noreferrer">
+            Open PDF <span>↗</span>
+          </a>
+          <button class="btn btn-secondary" onclick="window.print()" type="button">
+            Print <span>⎙</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="cv-meta-bar">
+        <div class="cv-meta-item">
+          <small>EMAIL</small>
+          <a href="mailto:waheed8069@gmail.com">waheed8069@gmail.com</a>
+        </div>
+        <div class="cv-meta-item">
+          <small>PHONE</small>
+          <a href="tel:+918589026612">+91 85890 26612</a>
+        </div>
+        <div class="cv-meta-item">
+          <small>LOCATION</small>
+          <span>Kerala, India</span>
+        </div>
+        <div class="cv-meta-item">
+          <small>LINKEDIN</small>
+          <a href="https://www.linkedin.com/in/waheed-m-28306b254/" target="_blank" rel="noreferrer">waheed-m-28306b254</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="cv-grid">
+      <!-- Left Column: Detailed Resume Information -->
+      <div class="cv-left">
+        <!-- Professional Summary -->
+        <section class="cv-section">
+          <h2 class="cv-section-title">01 — PROFESSIONAL SUMMARY <span>OVERVIEW</span></h2>
+          <p class="cv-summary">
+            UI/UX and Graphic Designer with hands-on experience creating user-friendly web and mobile interfaces, wireframes, prototypes, branding, and social media designs. Skilled in Figma, Photoshop, and Illustrator, with experience in user research, usability testing, and design thinking. Also familiar with digital marketing and creating high-converting marketing content.
+          </p>
+        </section>
+
+        <!-- Work Experience -->
+        <section class="cv-section">
+          <h2 class="cv-section-title">02 — WORK EXPERIENCE <span>CAREER</span></h2>
+          <div class="exp-list">
+            <article class="exp-card">
+              <div class="exp-head">
+                <div>
+                  <div class="exp-role">UI/UX &amp; Graphic Designer</div>
+                  <div class="exp-company">Freelancer</div>
+                </div>
+                <div class="exp-period">Jul 2025 — Present</div>
+              </div>
+              <ul class="exp-bullets">
+                <li>Designed user-friendly mobile apps and responsive websites.</li>
+                <li>Created logos, posters, marketing assets, and engaging social media graphics.</li>
+                <li>Developed interactive prototypes and UI layouts using Figma and Illustrator.</li>
+              </ul>
+            </article>
+
+            <article class="exp-card">
+              <div class="exp-head">
+                <div>
+                  <div class="exp-role">UI/UX Designer</div>
+                  <div class="exp-company">uScholar International · Perinthalmanna</div>
+                </div>
+                <div class="exp-period">Nov 2024 — Jun 2025</div>
+              </div>
+              <ul class="exp-bullets">
+                <li>Designed user-friendly interfaces for web and mobile applications at an international study abroad firm.</li>
+                <li>Redesigned core web interfaces, significantly increasing user engagement.</li>
+                <li>Conducted user research and usability testing to inform design decisions and optimize user experiences.</li>
+              </ul>
+            </article>
+
+            <article class="exp-card">
+              <div class="exp-head">
+                <div>
+                  <div class="exp-role">UI/UX Mentor · Graphic Design Mentor</div>
+                  <div class="exp-company">Softroniics · Perinthalmanna</div>
+                </div>
+                <div class="exp-period">Dec 2023 — Nov 2024</div>
+              </div>
+              <ul class="exp-bullets">
+                <li>Taught UI/UX principles, design thinking, and wireframing to students.</li>
+                <li>Provided hands-on training in Figma, Photoshop, and Illustrator.</li>
+                <li>Reviewed portfolios and mentored students on transitioning to design careers.</li>
+                <li>Guided students to build industry-grade portfolios that secured job placements.</li>
+              </ul>
+            </article>
+
+            <article class="exp-card">
+              <div class="exp-head">
+                <div>
+                  <div class="exp-role">UI/UX, Graphic Design &amp; Digital Marketing Intern</div>
+                  <div class="exp-company">Lal Media Academy · Nilambur</div>
+                </div>
+                <div class="exp-period">May 2023 — Oct 2023</div>
+              </div>
+              <ul class="exp-bullets">
+                <li>Assisted in designing basic wireframes and user layouts for digital products.</li>
+                <li>Created high-quality social media graphics and marketing banners.</li>
+                <li>Conducted competitor research to assist senior designers with layout updates.</li>
+                <li>Maintained design consistency across branding projects using Figma and Photoshop.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <!-- Education -->
+        <section class="cv-section">
+          <h2 class="cv-section-title">03 — EDUCATION <span>ACADEMIC</span></h2>
+          <div class="edu-item">
+            <div>
+              <h4>Graduation (BA History)</h4>
+              <p>Calicut University</p>
+            </div>
+            <span>2019 — 2022</span>
+          </div>
+          <div class="edu-item">
+            <div>
+              <h4>UI/UX Design &amp; Graphic Design</h4>
+              <p>Self-study, Mentorship &amp; Specialized Practical Training</p>
+            </div>
+            <span>Continuous</span>
+          </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="cv-section">
+          <h2 class="cv-section-title">04 — SKILLS &amp; CAPABILITIES <span>METHODOLOGY</span></h2>
+          <div class="tag-cluster">
+            <span class="tag accent">User research</span>
+            <span class="tag accent">Wireframing</span>
+            <span class="tag accent">Prototyping</span>
+            <span class="tag accent">Usability testing</span>
+            <span class="tag">Problem-solving</span>
+            <span class="tag">User flows</span>
+            <span class="tag">Typography</span>
+            <span class="tag">Color theory</span>
+            <span class="tag">Design thinking</span>
+            <span class="tag">FigJam</span>
+            <span class="tag">Logo design</span>
+            <span class="tag">Branding</span>
+            <span class="tag">Layout alignment</span>
+            <span class="tag">User interviews</span>
+            <span class="tag">Persona development</span>
+            <span class="tag">Interaction design</span>
+          </div>
+        </section>
+
+        <!-- Tools -->
+        <section class="cv-section">
+          <h2 class="cv-section-title">05 — SOFTWARE &amp; TOOLS <span>STACK</span></h2>
+          <div class="tag-cluster">
+            <span class="tag accent">Figma</span>
+            <span class="tag accent">Photoshop</span>
+            <span class="tag accent">Illustrator</span>
+            <span class="tag">CapCut</span>
+            <span class="tag">FigJam</span>
+            <span class="tag">Adobe XD</span>
+          </div>
+        </section>
+      </div>
+
+      <!-- Right Column: High-Res Document Preview Reader -->
+      <aside class="cv-right">
+        <div class="doc-viewer-sticky">
+          <div class="doc-frame">
+            <div class="doc-toolbar">
+              <div class="doc-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="doc-toolbar-title">DOCUMENT PREVIEW</div>
+              <a class="btn btn-secondary" href="assets/Waheed_M_Resume.pdf" target="_blank" rel="noreferrer" style="padding: 4px 10px; font-size: 11px;">Open ↗</a>
+            </div>
+
+            <a class="doc-paper" href="assets/Waheed_M_Resume.pdf" target="_blank" rel="noreferrer" title="Click to view full PDF document">
+              <img src="assets/cv-preview.jpg" alt="Waheed M — UI/UX & Graphic Designer Official Curriculum Vitae" />
+              <div class="doc-overlay-action">
+                <span>View Fullscreen PDF ↗</span>
+              </div>
+            </a>
+
+            <div class="doc-footer-meta">
+              <span>PDF Document · Verified 2026</span>
+              <a href="assets/Waheed_M_Resume.pdf" download="Waheed_M_Resume.pdf">Download File ↓</a>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <span>© 2026 Waheed M · UI/UX &amp; Graphic Designer</span>
+    <div class="footer-links">
+      <a href="mailto:waheed8069@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/waheed-m-28306b254/" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a href="https://www.instagram.com/waaaaaaheed/" target="_blank" rel="noreferrer">Instagram</a>
+      <a href="index.html">Portfolio</a>
+    </div>
+  </footer>
+
+</body>
+</html>
